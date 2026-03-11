@@ -26,10 +26,10 @@ This repository contains core algorithmic innovations for box-supervised instanc
 
 ```python
 # 1. Use MILA head for mask refinement
-from mila import MILMaskedAttentionCondInstMaskHead
+from mila import MaskedAttentionRefinement, MILLoss
 
 # 2. Use PCR for photometric consistency
-from pcr import PCRDetector
+from pcr import PCRDetector, PhotometricAugmentation
 
 # 3. Use Quality Focal Loss
 from quality_head import QualityFocalLoss
