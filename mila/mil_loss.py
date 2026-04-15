@@ -1,12 +1,6 @@
 """
 MIL Loss for Box-Supervised Instance Segmentation
 
-This module implements the Multiple Instance Learning (MIL) bag-level loss
-for box-supervised instance segmentation. It uses row/column bags within
-an expanded box region to supervise mask prediction without pixel-level labels.
-
-Our approach: Construct row/column bags within ground-truth boxes and apply
-MIL constraints with stochastic expansion to suppress background leakage.
 """
 
 import torch
