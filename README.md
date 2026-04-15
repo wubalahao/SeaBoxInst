@@ -16,11 +16,7 @@ This repository contains core algorithmic innovations for box-supervised instanc
 - Enhances robustness to underwater image degradations (color cast, blur, noise)
 - Key files: `pcr/pcr_detector.py`, `pcr/photometric_aug.py`
 
-### 3. Quality-aware Classification
-- Quality Focal Loss (QFL) aligning confidence with localization quality
-- CIoU regression with centerness-on-reg
-- Soft-NMS for inference
-- Key files: `quality_head/quality_focal_loss.py`
+
 
 ## Quick Start
 
@@ -31,9 +27,7 @@ from mila import MaskedAttentionRefinement, MILLoss
 # 2. Use PCR for photometric consistency
 from pcr import PCRDetector, PhotometricAugmentation
 
-# 3. Use Quality Focal Loss
-from quality_head import QualityFocalLoss
-```
+
 
 ## Architecture Overview
 
