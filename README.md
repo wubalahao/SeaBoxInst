@@ -18,56 +18,7 @@ This repository contains core algorithmic innovations for box-supervised instanc
 
 
 
-## Quick Start
 
-```python
-# 1. Use MILA head for mask refinement
-from mila import MaskedAttentionRefinement, MILLoss
-
-# 2. Use PCR for photometric consistency
-from pcr import PCRDetector, PhotometricAugmentation
-
-
-
-## Architecture Overview
-
-```
-Input Image
-    │
-    ▼
-┌─────────────────────────────────────┐
-│  Swin Transformer + PAFPN Backbone  │
-└─────────────────────────────────────┘
-    │
-    ├──────────────────────┬──────────────────────┐
-    ▼                      ▼                      ▼
-┌─────────────┐    ┌─────────────┐    ┌─────────────────────┐
-│ Detection   │    │ Mask Branch │    │ Dual-View PCR Branch│
-│ Head (QFL)  │    │             │    │ (Strong Augmentation│
-└─────────────┘    └─────────────┘    └─────────────────────┘
-    │                      │                      │
-    └──────────────────────┼──────────────────────┘
-                           ▼
-              ┌────────────────────────┐
-              │  MILA Mask Refinement  │
-              │ (Masked Attention +    │
-              │  MIL Bag-level Loss)   │
-              └────────────────────────┘
-                           │
-                           ▼
-                   Instance Masks
-```
-
-## Citation
-
-```bibtex
-@article{seaboxinst2026,
-  title={Box-Supervised Underwater Instance Segmentation with MIL-Driven Mask Refinement and Photometric Consistency},
-  author={},
-  journal={},
-  year={2026}
-}
-```
 
 ## License
 
