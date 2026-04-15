@@ -17,24 +17,7 @@ import torch.nn.functional as F
 
 
 def quality_focal_loss(pred, target, beta=2.0):
-    r"""Quality Focal Loss (QFL).
-
-    QFL is used to jointly learn classification and quality (IoU) estimation.
-    Unlike standard cross-entropy, QFL treats the IoU as a continuous supervision
-    signal and assigns larger gradients to high-quality samples.
-
-    Args:
-        pred: Predicted joint representation of classification and quality
-              with shape (N, C), where C is the number of classes.
-        target: Tuple of (label, score) where:
-                - label: category id with shape (N,)
-                - score: quality (IoU) score with shape (N,)
-        beta: The beta parameter for calculating the modulating factor.
-              Defaults to 2.0.
-
-    Returns:
-        Loss tensor with shape (N,).
-    """
+    
     assert len(target) == 2, "target for QFL must be a tuple of (label, score)"
 
     label, score = target
